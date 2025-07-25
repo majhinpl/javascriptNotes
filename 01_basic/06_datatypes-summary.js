@@ -38,3 +38,25 @@ function showName(stocks) {
 console.log(typeof outsideTemp);
 console.log(typeof showName);
 console.log(typeof Symbol);
+
+// memories
+// Stack (primitives), Heap (non-primitives)
+
+let buyStock = "shpc";
+let sellStock = buyStock;
+sellStock = "nhpc";
+
+console.log(buyStock);
+console.log(sellStock); // copying value memories to stack without changing the existing value.
+
+let user = {
+  email: "user@mail.com",
+  payment: "payment@mail.com",
+};
+
+let newUser = user;
+
+newUser.email = "change@mail.com";
+
+console.log(user.email);
+console.log(newUser.email);
