@@ -27,3 +27,9 @@ console.log(newStocks.split(" "));
 const newStrings = new String("i am learning Strings.");
 console.log(newStrings.bold());
 console.log(newStrings.toWellFormed(""));
+console.log(newStrings.at(-3));
+
+console.log(stocks.trimStart());
+
+const uid = username.padStart(10, "124");
+console.log(uid);
