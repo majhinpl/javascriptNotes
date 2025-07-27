@@ -23,10 +23,16 @@ console.log(prices.includes(123.45));
 console.log(prices.indexOf(3));
 
 // slice, splice
+// Remove multiple items from the end of an array
 
-console.log("original arrays : \n", stocks);
+const myStocks = ["unhpl", "tpc", "bhl", "hidclp", "nhdl", "kkhc"];
 
-console.log("splice : \n", stocks.splice(1, 3));
+// removing from the last elements
+// const sellStocks = myStocks.splice(-3);
+// console.log("splice in original arrays : \n", myStocks);
+
+// console.log("sold stocks : \n", sellStocks);
+
 console.log("original arrays : \n", stocks);
 
 console.log("slice : \n", stocks.slice(1, 3));
