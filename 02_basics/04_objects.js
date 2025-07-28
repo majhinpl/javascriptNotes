@@ -13,8 +13,26 @@ obj4 = { ...obj1, ...obj2 };
 
 // console.log(obj4);
 
+/*
 console.log(Object.keys(obj1));
 console.log(Object.values(obj1));
 console.log(Object.entries(obj1));
 
-// console.log(obj3);a
+*/
+
+// console.log(obj3);
+
+// Destructure
+const course = {
+  courseName: "js hindi",
+  price: "999",
+  courseInstructor: "hitesh",
+};
+
+// course.courseInstructor;
+
+const { courseInstructor: instructor } = course;
+
+// console.log(instructor);
+
+// API
