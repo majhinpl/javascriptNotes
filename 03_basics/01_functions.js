@@ -29,4 +29,31 @@ function loggedInMsg(username = "someone") {
 }
 
 // console.log(loggedInMsg("nephx"));
-console.log(loggedInMsg());
+// console.log(loggedInMsg());
+
+// spread operator
+
+function calcCardPrice(val1, val2, ...num1) {
+  return num1;
+}
+
+// console.log(calcCardPrice(200, 100, 600));
+
+const user = {
+  username: "nephx",
+  price: 199,
+};
+
+function handlePrice(anyObj) {
+  console.log(`Username is ${anyObj.username} and price is ${anyObj.price}`);
+}
+
+handlePrice(user);
+
+const myNewArray = [122, 200, 400, 600];
+
+function secondVal(getArr) {
+  return getArr[0];
+}
+
+console.log(secondVal(myNewArray));
