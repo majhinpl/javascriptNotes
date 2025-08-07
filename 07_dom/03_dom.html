@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Learning</title>
+    <style>
+      body {
+        background: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body class="bg-black">
+    <div class="parent">
+      <h1 class="heading" id="title">DOM Learning</h1>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit,
+        aut consequuntur. Asperiores iste veritatis repudiandae, ducimus ea,
+        harum optio suscipit ut blanditiis, in ullam officiis obcaecati
+        voluptate? Voluptates, voluptate sed!
+      </p>
+    </div>
+
+    <script>
+      const parent = document.querySelector(".parent");
+      //   console.log(parent);
+      //   console.log(parent.children[1].innerHTML);
+
+      // for (let i = 0; i < parent.children.length; i++) {
+      //   console.log(parent.children[i].innerHTML);
+      // }
+
+      console.log(parent.childNodes);
+
+      const div = document.createElement("div");
+      div.className = "main";
+      div.id = Math.round(Math.random() * 10 + 1);
+      const addText = document.createTextNode("nephx");
+      div.appendChild(addText);
+      document.body.appendChild(div);
+
+      function addLang(langName) {
+        const li = document.createElement("li");
+        li.innerHTML = `${langName}`;
+
+        document.querySelector(".language");
+        appendChild(li);
+      }
+      addLang("python");
+      addLang("typescript");
+
+      function addOptiLang(langName) {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(`.language`).appendChild(li);
+      }
+      addOptiLang("golang");
+    </script>
+  </body>
+</html>
