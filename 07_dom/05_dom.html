@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM Learning</title>
+  <style>
+    body {
+      background: #212121;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body class="bg-black">
+  <ul class="language">
+    <li>Javascript</li>
+  </ul>
+
+</body>
+
+
+<script>
+
+  // Edit and remove elements in DOM
+
+  function addLang(langName) {
+    const li = document.createElement("li");
+    li.innerHTML = `${langName}`;
+
+    document.querySelector(".language").appendChild(li);
+  }
+
+  addLang("python");
+
+  addLang("typescript");
+
+  function addOptiLang(langName) {
+    const li = document.createElement("li");
+    li.appendChild(document.createTextNode(langName));
+    document.querySelector(`.language`).appendChild(li);
+  }
+  addOptiLang("golang");
+
+  // Edit
+
+  const secLang = document.querySelector("li:nth-child(2)");
+
+  console.log("secLang : \n", secLang);
+
+  const newLi = document.createElement("li")
+
+  newLi.textContent = "mojo"
+
+  secLang.replaceWith(newLi)
+
+  // edit
+
+  const firstLang = document.querySelector("li:first-child")
+  firstLang.outerHTML = "<li>TypeScript</li>"
+
+  // remove
+
+  const lastLang = document.querySelector("li:last-child")
+  lastLang.remove()
+
+
+</script>
+
+</html>
