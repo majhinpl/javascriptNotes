@@ -1,62 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DOM Learning</title>
-    <style>
-      body {
-        background: #212121;
-        color: #fff;
-      }
-    </style>
-  </head>
 
-  <body class="bg-black">
-    <div class="parent">
-      <h1 class="heading" id="title">DOM Learning</h1>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit,
-        aut consequuntur. Asperiores iste veritatis repudiandae, ducimus ea,
-        harum optio suscipit ut blanditiis, in ullam officiis obcaecati
-        voluptate? Voluptates, voluptate sed!
-      </p>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM Learning</title>
+  <style>
+    body {
+      background: #212121;
+      color: #fff;
+    }
+  </style>
+</head>
 
-    <script>
-      const parent = document.querySelector(".parent");
-      //   console.log(parent);
-      //   console.log(parent.children[1].innerHTML);
+<body class="bg-black">
 
-      // for (let i = 0; i < parent.children.length; i++) {
-      //   console.log(parent.children[i].innerHTML);
-      // }
+  <div class="parent">
+    <h1 class="heading">Weekdays</h1>
+    <div class="day">Monday</div>
+    <div class="day">Tuesday</div>
+    <div class="day">Wednesday</div>
+    <div class="day">Thrusday</div>
+  </div>
 
-      console.log(parent.childNodes);
+  <script>
+    const parent = document.querySelector(".parent");
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1].innerHTML);
 
-      const div = document.createElement("div");
-      div.className = "main";
-      div.id = Math.round(Math.random() * 10 + 1);
-      const addText = document.createTextNode("nephx");
-      div.appendChild(addText);
-      document.body.appendChild(div);
+    for (let i = 0; i < parent.children.length; i++) {
+      // console.log(parent.children[i].innerHTML);
+    }
 
-      function addLang(langName) {
-        const li = document.createElement("li");
-        li.innerHTML = `${langName}`;
+    parent.children[1].style.color = "orange"
 
-        document.querySelector(".language");
-        appendChild(li);
-      }
-      addLang("python");
-      addLang("typescript");
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
 
-      function addOptiLang(langName) {
-        const li = document.createElement("li");
-        li.appendChild(document.createTextNode(langName));
-        document.querySelector(`.language`).appendChild(li);
-      }
-      addOptiLang("golang");
-    </script>
-  </body>
+    const dayOne = document.querySelector(".day")
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement);
+    // console.log(dayOne.nextElementSibling);
+
+    console.log("NODES: ", parent.childNodes);
+  </script>
+</body>
+
 </html>
