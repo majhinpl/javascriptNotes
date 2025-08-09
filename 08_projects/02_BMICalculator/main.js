@@ -5,13 +5,14 @@ form.addEventListener("submit", (e) => {
 
   const height = parseInt(document.querySelector("#height").value);
   const weight = parseInt(document.querySelector("#weight").value);
+  const result = document.querySelector("#results");
 
-  if (height === "" || height === isNaN(height)) {
-    console.log(`${height} is invalid. please provide the correct value`);
-  } else if (weight === "" || weight === isNaN(weight)) {
-    console.log(`${weight} is invalid. please provide the correct value`);
+  if (height === "" || height < 0 || height === isNaN(height)) {
+    result.innerHTML = `${height} is invalid. please provide the correct value`;
+  } else if (weight === "" || weight < 0 || weight === isNaN(weight)) {
+    result.innerText`${weight} is invalid. please provide the correct value`;
   } else {
-    BMI = Math.floor((weight / height / height) * 10000).toFixed(2);
+    BMI = (weight / ((height * height) / 10000)).toFixed(2);
   }
 
   function BMIGuide(guide) {
@@ -24,6 +25,5 @@ form.addEventListener("submit", (e) => {
     }
   }
 
-  const result = document.querySelector("#results");
   result.innerText = `Your BMI is : ${BMI} - ${BMIGuide(BMI)}`;
 });
