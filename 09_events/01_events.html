@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #414141;
+        color: #9c9c9c;
+        width: 1000px;
+        margin: 0 auto;
+      }
+      #images {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        background-color: #515151;
+        border-radius: 10px;
+        overflow: auto;
+      }
+
+      #images img {
+        height: 500px;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      h2 {
+        text-align: center;
+      }
+      li {
+        list-style-type: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Amazing image</h2>
+
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            id="image1"
+            src="https://images.pexels.com/photos/33314204/pexels-photo-33314204.jpeg"
+            alt="Nature landscape photograph"
+            width="300"
+          />
+        </li>
+        <li>
+          <img
+            id="image2"
+            src="https://images.pexels.com/photos/16764210/pexels-photo-16764210.jpeg"
+            alt="Urban cityscape photograph"
+            width="300"
+          />
+        </li>
+        <li>
+          <img
+            id="image3"
+            src="https://images.pexels.com/photos/31427020/pexels-photo-31427020.jpeg"
+            alt="Abstract art photograph"
+            width="300"
+          />
+        </li>
+        <li>
+          <img
+            id="image4"
+            src="https://images.pexels.com/photos/33029806/pexels-photo-33029806.jpeg"
+            alt="Portrait photography"
+            width="300"
+          />
+        </li>
+        <li>
+          <img
+            id="image5"
+            src="https://images.pexels.com/photos/33149727/pexels-photo-33149727.jpeg"
+            alt="Wildlife animal photograph"
+            width="300"
+          />
+        </li>
+        <li>
+          <img
+            id="image6"
+            src="https://images.pexels.com/photos/32973553/pexels-photo-32973553.jpeg"
+            alt="Architectural structure photograph"
+            width="300"
+          />
+        </li>
+        <li>
+          <a href="https://google.com" id="google" style="color: aliceblue"
+            >GO TO GOOGLE.</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // type, timestamp, defaultPrevented,
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY,
+    // altKey, ctrlKey, shiftKey, keyCode
+
+    /*
+    document.getElementById("images").addEventListener(
+      "click",
+      (e) => {
+        console.log("click inside the UL :\n", e);
+      },
+      true // Captureing event
+    );
+
+    */
+    /*
+    document.getElementById("images").addEventListener(
+      "click",
+      (e) => {
+        console.log("click inside the UL :\n", e);
+      },
+      false // bobling event
+    );
+
+    */
+
+    /*
+
+    document.getElementById("images").addEventListener(
+      "click",
+      (e) => {
+        console.log("click inside the UL :\n", e);
+      },
+      false
+    );
+
+    document.getElementById("image2").addEventListener(
+      "click",
+      (e) => {
+        e.stopPropagation();
+        console.log("click inside the image : \n", e);
+      },
+      false
+    );
+
+    document.getElementById("google").addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log("google clicked");
+    });
+
+    */
+
+    document.querySelector("#images").addEventListener("click", (e) => {
+      //   console.log(e.target.parentNode);
+      console.log(e.target.tagName);
+      if (e.target.tagName === "IMG") {
+        console.log(e.target.id);
+
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+      }
+      //   removeIt.parentNode.removeChild(removeIt);
+    });
+  </script>
+</html>
