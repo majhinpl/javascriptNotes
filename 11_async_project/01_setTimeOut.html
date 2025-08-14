@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async in Js</title>
+
+    <style>
+      body {
+        background-color: #414141;
+        color: #6a6a6a;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Async in Js</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const callMe = function () {
+      console.log("Nephx");
+    };
+
+    const changeText = function () {
+      document.querySelector("h1").innerHTML = "Learning JS";
+    };
+
+    const changeMe = setTimeout(changeText, 2000);
+
+    document.querySelector("#stop").addEventListener("click", () => {
+      clearTimeout(changeMe);
+      console.log("STOPPED");
+    });
+  </script>
+</html>
